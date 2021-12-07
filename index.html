@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | [Blogr]</title>
+
+<!-- tailwind jit mode  -->
+  <script src="https://unpkg.com/tailwindcss-jit-cdn"></script>
+
+<!-- attribution style    -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+
+<!-- links for the fonts  -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <script type="tailwind-config">
+  {
+    theme: {
+      borderRadius: {
+        'large': '100px'
+      },
+      extend: {
+        colors:{
+          'lightRed': 'hsl(356, 100%, 66%)',
+          'vLightRed': 'hsl(355, 100%, 74%)',
+          'vDarkBlue': 'hsl(208, 49%, 24%)',
+          'grayishBlue': 'hsl(240, 2%, 79%)',
+          'vDarkGrayishBlue': 'hsl(207, 13%, 34%)',
+          'vDarkBlackBlue': 'hsl(240, 10%, 16%)',
+          'vLightRedGradient': 'hsl(13, 100%, 72%)',
+          'lightRedGradient': 'hsl(353, 100%, 62%)',
+          'vDarkGrayBlueGradient': 'hsl(237, 17%, 21%)',
+          'vDarkDesaturatedBlueGrad': 'hsl(237, 23%, 32%)'
+        }
+      }
+    }
+  }
+  </script>
+</head>
+<body>
+  <main class="grid place-items-center w-full min-h-screen">
+    <section class="pb-10">
+      <div class="relative bg-lightRed rounded-bl-large">
+        <div class="absolute inset-0">
+          <img class="w-full h-full object-cover" src="./images/bg-pattern-intro-mobile.svg" alt="">
+        </div>
+        <header class="px-6 relative pt-12 pb-36 " >
+       
+          <div class=" ">
+            <nav class="flex justify-between items-center">
+              <img src="./images/logo.svg" alt="">
+              <img src="./images/icon-hamburger.svg" alt="">
+            </nav>
+          </div> 
+          <!-- <nav class="flex justify-between items-center hidden">
+            <div class="flex justify-center items-center">
+              <img src="./images/logo.svg" alt="">
+              <div class="flex justify-center items-center">
+                <button>Product</button>
+                <button>Company</button>
+                <button>Connect</button>
+  
+              </div>
+            </div>
+            <div class="flex justify-center items-center">
+              <button>Login</button>
+              <button>Signup</button>
+            </div>
+            Product
+  
+    Overview Pricing  Marketplace  Features  Integrations Company About Team Blog Careers   Connect Contact
+  Newsletter  LinkedIn  Login Sign Up
+  
+          </nav> --> 
+          <div class="flex flex-col justify-center items-center text-white mt-28">
+            <h1 class="text-4xl text-center">A modern 
+              <span class="block">publishing platform</span> </h1>
+            <p class="mt-5 text-lg text-center tracking-tight">Grow your audience and build your online brand</p>
+            <div class="mt-10">
+              <button class="px-4 py-3 bg-white text-lightRed font-bold rounded-large ">Start for Free</button>
+              <button class="px-4 py-3 text-white font-bold rounded-large border-2">Learn More</button>
+            </div>
+          </div>
+        </header>
+  
+      </div>
+      
+      <div class="px-6">
+        <article class="mt-24">
+          <h2 class="text-center text-2xl">Designed for the future</h2>
+          <div class="grid md:grid-cols-2 justify-items-center mt-10">
+            <div class="grid justify-items-center object-fit">
+              <img src="./images/illustration-editor-mobile.svg" alt="">
+            </div>
+            <div class="mt-10 md:mt-0 text-center">
+              <h3 class="text-3xl tracking-wide">Introducing an extensible editor</h3>
+              <p class="text-lg mt-5 leading-8 tracking-wide text-gray-700">Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content. 
+              The editor supports management of multiple blogs and allows easy manipulation of embeds such as images, 
+              videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or 
+              change the looks of a blog.
+              </p>
+              <h3 class="text-3xl tracking-wide mt-10">Robust content management</h3>
+              <p class="text-lg mt-5 leading-8 tracking-wide text-gray-700">Flexible content management enables users to easily move through posts. Increase the usability of your blog 
+              by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.
+              </p>
+            </div>
+          </div>
+          
+          
+        </article>
+      </div>
+
+      <div class="px-6">
+        <article class="mt-24">
+          <div class="text-center relative">
+            <div class="absolute inset-0">
+              <img class="object-cover" src="./images/illustration-phones.svg" alt="">
+            </div>
+            <div>
+              <h3 class=" text-2xl">State of the Art Infrastructure</h3>
+              <p class="mt-5 text-lg text-gray-600">With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity. 
+              This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.
+              </p>
+            </div>
+            
+          </div>
+          
+        </article>
+      </div>
+
+      <div>
+        <article>
+          <h3>Free, open, simple</h3>
+          <p>Blogr is a free and open source application backed by a large community of helpful developers. It supports 
+            features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools, 
+            and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.
+          </p>
+          <h3>Powerful tooling</h3>
+          <p>Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a breeze, but
+            capable of producing even the most complicated sites.</p>
+        </article>
+      </div>
+
+      <footer>
+        Product
+
+        Overview
+        Pricing
+        Marketplace
+        Features
+        Integrations
+      
+        Company
+      
+        About
+        Team
+        Blog
+        Careers
+      
+        Connect
+        
+        Contact
+        Newsletter
+        LinkedIn
+      </footer>
+    </section>
+  </main>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+</html>
