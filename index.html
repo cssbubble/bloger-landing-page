@@ -46,8 +46,8 @@
   }
   </script>
 </head>
-<body>
-  <main class="grid place-items-center w-full min-h-screen">
+<body class="bg-gray-500">
+  <main class="grid place-items-center w-full min-h-screen md:max-w-5xl mx-auto bg-white overflow-hidden ">
     <section class="pb-10">
       <div class="relative bg-lightRed rounded-bl-large">
         <div class="absolute inset-0">
@@ -77,8 +77,8 @@
             </div>
             Product
   
-    Overview Pricing  Marketplace  Features  Integrations Company About Team Blog Careers   Connect Contact
-  Newsletter  LinkedIn  Login Sign Up
+              Overview Pricing  Marketplace  Features  Integrations Company About Team Blog Careers   Connect Contact
+            Newsletter  LinkedIn  Login Sign Up
   
           </nav> --> 
           <div class="flex flex-col justify-center items-center text-white mt-28">
@@ -97,19 +97,20 @@
       <div class="px-6">
         <article class="mt-24">
           <h2 class="text-center text-3xl tracking-wide">Designed for the future</h2>
-          <div class="grid md:grid-cols-2 justify-items-center mt-10">
-            <div class="grid justify-items-center object-fit">
-              <img src="./images/illustration-editor-mobile.svg" alt="">
+          <div class="grid md:grid-cols-2 justify-items-center items-center mt-10">
+            <div class="grid justify-items-center object-fit order-2 ">
+              <img class="md:hidden" src="./images/illustration-editor-mobile.svg" alt="">
+              <img class="hidden md:inline-block md:-mr-80" src="./images/illustration-editor-desktop.svg" alt="">
             </div>
-            <div class="mt-10 md:mt-0 text-center">
-              <h3 class="text-3xl tracking-wide px-6">Introducing an extensible editor</h3>
-              <p class="text-lg mt-5 leading-8 tracking-wide text-gray-700 px-2">Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content. 
+            <div class="mt-10 md:mt-0 text-center md:text-left">
+              <h3 class="text-3xl tracking-wide px-6 md:px-0">Introducing an extensible editor</h3>
+              <p class="text-lg mt-5 leading-8 tracking-wide text-gray-700 px-2 md:px-0 md:text-base">Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content. 
               The editor supports management of multiple blogs and allows easy manipulation of embeds such as images, 
               videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or 
               change the looks of a blog.
               </p>
-              <h3 class="text-3xl tracking-wide mt-10 px-6">Robust content management</h3>
-              <p class="text-lg mt-5 leading-8 tracking-wide text-gray-700 px-2">Flexible content management enables users to easily move through posts. Increase the usability of your blog 
+              <h3 class="text-3xl tracking-wide mt-10 px-6 md:px-0">Robust content management</h3>
+              <p class="text-lg mt-5 leading-8 tracking-wide text-gray-700 px-2 md:px-0 md:text-base">Flexible content management enables users to easily move through posts. Increase the usability of your blog 
               by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.
               </p>
             </div>
