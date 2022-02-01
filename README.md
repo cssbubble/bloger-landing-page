@@ -34,7 +34,6 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [solution](https://your-solution-url.com)
 - Live Site URL: [live site](http://priyanka.trivedi.pw/bloger-landing-page/)
 
 ## My process
