@@ -89,8 +89,8 @@
            
           <!-- login signup button for desktop , this will be hidden for mobile  -->
           <div class="hidden lg:flex justify-center items-center">
-            <button class="px-4 py-3 rounded-full text-gray-200 btn-mb">Login</button>
-            <button class="px-4 py-3 rounded-full text-gray-200 btn-mb">Signup</button>
+            <button  aria-label="login" class="px-4 py-3 rounded-full text-gray-200 btn-mb">Login</button>
+            <button  aria-label="signup" class="px-4 py-3 rounded-full text-gray-200 btn-mb">Signup</button>
           </div>     
         </nav>
       </div>
@@ -100,10 +100,10 @@
         
         <div >
           <!-- mobile menu button, this will be hidden for desktop  -->
-          <button role="menu" class="p-2 lg:hidden" @click="toggle()" x-show="!open">
+          <button  aria-label="menu" class="p-2 lg:hidden" @click="toggle()" x-show="!open">
             <img src="images/icon-hamburger.svg" alt="menu">
           </button>
-          <button role="menu" class="p-2 lg:hidden" @click="toggle()" x-show="open">
+          <button  aria-label="menu close" class="p-2 lg:hidden" @click="toggle()" x-show="open">
             <img src="images/icon-close.svg" alt="menu">
           </button>
         </div>
@@ -149,9 +149,9 @@
               </div>   
             </div>
                
-            <form action="" class="flex flex-col justify-center items-center w-full py-5 text-vDarkBlackBlue">
-              <button class="px-6 py-3 rounded-full btn-mb">Login</button>
-              <button class="px-6 py-3 rounded-full btn-mb">Signup</button>
+            <form action="url" class="flex flex-col justify-center items-center w-full py-5 text-vDarkBlackBlue">
+              <button aria-label="login" class="px-6 py-3 rounded-full btn-mb">Login</button>
+              <button aria-label="signup" class="px-6 py-3 rounded-full btn-mb">Signup</button>
             </form> 
           </nav>
         </div>
@@ -163,8 +163,8 @@
       <h1 class="text-3xl font-medium text-center lg:text-5xl lg:font-medium">A modern <br class="lg:hidden"> publishing platform</h1>
       <p class="mt-5 text-lg text-center font-light">Grow your audience and build your online brand</p>
       <form action="#" class="flex justify-center items-center mt-10">
-        <button class="start-btn px-4 py-3 bg-white font-bold rounded-large ">Start for Free</button>
-        <button class="px-4 py-3 text-white font-bold rounded-large border-2 ml-4">Learn More</button>
+        <button  aria-label="start here" class="start-btn px-4 py-3 bg-white font-bold rounded-large ">Start for Free</button>
+        <button  aria-label="learn more" class="px-4 py-3 text-white font-bold rounded-large border-2 ml-4">Learn More</button>
       </form>
     </div>
   </header>
