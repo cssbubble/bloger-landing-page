@@ -27,6 +27,7 @@ Users should be able to:
 - See hover states for all interactive elements on the page
 
 ### Screenshot
+<img width="1248" alt="blogr" src="https://user-images.githubusercontent.com/1849689/151959859-e65ff906-5985-47bb-b3ad-5c63f637a06e.png">
 
 ![](./screenshot.jpg)
 
@@ -34,7 +35,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [live site URL](http://priyanka.trivedi.pw/bloger-landing-page/)
 
 ## My process
 
@@ -46,21 +47,21 @@ Users should be able to:
 - CSS Grid
 - Mobile-first workflow
 - [Tailwind Css](https://tailwindcss.com/) - Tailwind css
+- [Alpine js](https://alpinejs.dev/) - Alpine js
 
 ### What I learned
-
+- It was really a great challenge. I figured out how to position backgroun images and the different values works for it. Didn't find good solution to position background image so I add custom css and it worked. 
+- Multiple dropdown and toggle effects on nav items was fun to make and experiment.
 
 ### Continued development
-
+- Would like to work with little more complicated css layout and javascript projects.
 
 ### Useful resources
-
+- original documents
+- [MDN](https://developer.mozilla.org/en-US/) - MDN 
 
 ## Author
 
 - Frontend Mentor - [@cssbubble](https://www.frontendmentor.io/profile/cssbubble)
 - Twitter - [@trivedipriyanka](https://www.twitter.com/trivedipriyanka)
-
-
-## Acknowledgments
 
