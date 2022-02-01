@@ -1,0 +1,76 @@
+:root{
+    --lightRed: hsl(356, 100%, 66%);
+    --vLightRed: hsl(355, 100%, 74%);
+    --vDarkBlue: hsl(208, 49%, 24%);
+    --grayishBlue: hsl(240, 2%, 79%);
+    --vDarkGrayishBlue: hsl(207, 13%, 34%);
+    --vDarkBlackBlue: hsl(240, 10%, 16%);
+    --vLightRedGradient: hsl(13, 100%, 72%);
+    --lightRedGradient: hsl(353, 100%, 62%);
+    --vDarkGrayBlueGradient: hsl(237, 17%, 21%);
+    --vDarkDesaturatedBlueGrad: hsl(237, 23%, 32%);
+}
+header{
+    font-family: 'Ubuntu', sans-serif;
+    background-image: url('/images/bg-pattern-intro-mobile.svg'),linear-gradient(135deg, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+    background-position: top 35% left 40%;
+    border-bottom-left-radius: 100px;
+}
+
+.inner-nav{
+    display: grid;
+    justify-items: center;
+    color: var(--vDarkGrayishBlue);
+    background-color: whitesmoke;
+    padding: 1.25rem 2.5rem;
+    gap: 1rem;
+    margin-top: 1.25rem;
+    border-radius: 0.5rem;
+    position: absolute;
+    left: -3rem;
+    z-index: 10;
+}
+
+.start-btn{
+    color: var(--lightRed);
+}
+.btn-mb:hover{
+    color: white;
+    background-color: var(--vLightRed);
+}
+h2 h3{
+    color: var(--vDarkBlackBlue);
+}
+.text-color{
+    color: var(--vDarkGrayishBlue);
+}
+.mobile-section{
+    background-image: url('/images/bg-pattern-circles.svg'); 
+    background-size: 130%;
+    background-repeat: no-repeat;
+    background-position: 50% -150%;
+}
+footer{
+    background-color: var(--vDarkGrayBlueGradient);
+    color: var(--grayishBlue);
+}
+@media screen and (min-width: 768px){
+    .mobile-section{
+        background-image: url('/images/bg-pattern-circles.svg'); 
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: 80%;
+    }
+}
+@media screen and (min-width: 1200px) {
+    header{
+        background-image: url('/images/bg-pattern-intro-desktop.svg'),linear-gradient(90deg, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+        background-position: top 50% left 33%;
+    }
+    .mobile-section{
+        background-image: url('/images/bg-pattern-circles.svg'); 
+        background-repeat: no-repeat;
+        background-position: -50% 80%;
+        background-size: 70%;
+    }
+}

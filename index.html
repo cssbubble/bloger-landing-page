@@ -8,8 +8,8 @@
   
   <title>Frontend Mentor | [Blogr]</title>
 
-<!-- tailwind jit mode  -->
-  <script src="https://unpkg.com/tailwindcss-jit-cdn"></script>
+<!-- tailwind css  -->
+<script src="https://cdn.tailwindcss.com"></script>
 
 <!-- attribution style    -->
   <style>
@@ -21,178 +21,264 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
-
-  <script type="tailwind-config">
-  {
-    theme: {
-      borderRadius: {
-        'large': '100px'
-      },
-      extend: {
-        colors:{
-          'lightRed': 'hsl(356, 100%, 66%)',
-          'vLightRed': 'hsl(355, 100%, 74%)',
-          'vDarkBlue': 'hsl(208, 49%, 24%)',
-          'grayishBlue': 'hsl(240, 2%, 79%)',
-          'vDarkGrayishBlue': 'hsl(207, 13%, 34%)',
-          'vDarkBlackBlue': 'hsl(240, 10%, 16%)',
-          'vLightRedGradient': 'hsl(13, 100%, 72%)',
-          'lightRedGradient': 'hsl(353, 100%, 62%)',
-          'vDarkGrayBlueGradient': 'hsl(237, 17%, 21%)',
-          'vDarkDesaturatedBlueGrad': 'hsl(237, 23%, 32%)'
-        }
+<link rel="stylesheet" href="styles.css"> 
+<script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          borderRadius: {
+          'large': '100px'
+        },
       }
     }
   }
+    
   </script>
+  <script defer src="https://unpkg.com/alpinejs@3.8.1/dist/cdn.min.js"></script>
 </head>
-<body class="bg-gray-500">
-  <main class="grid place-items-center w-full min-h-screen md:max-w-5xl mx-auto bg-white overflow-hidden ">
-    <section class="pb-10">
-      <div class="relative bg-lightRed rounded-bl-large">
-        <div class="absolute inset-0">
-          <img class="w-full h-full object-cover" src="./images/bg-pattern-intro-mobile.svg" alt="">
-        </div>
-        <header class="px-6 relative pt-12 pb-36 " >
-       
-          <div class=" ">
-            <nav class="flex justify-between items-center">
-              <img src="./images/logo.svg" alt="">
-              <img src="./images/icon-hamburger.svg" alt="">
-            </nav>
-          </div> 
-          <!-- <nav class="flex justify-between items-center hidden">
-            <div class="flex justify-center items-center">
-              <img src="./images/logo.svg" alt="">
-              <div class="flex justify-center items-center">
-                <button>Product</button>
-                <button>Company</button>
-                <button>Connect</button>
-  
+<body>
+  <header class="w-full mx-auto py-20 px-5">
+    <div class="flex justify-between items-center relative md:max-w-5xl mx-auto">
+      <!-- desktop navbar  -->
+      <div class="flex justify-between items-center hidden lg:flex w-full">
+        <!-- logo image  -->
+        <img src="/images/logo.svg" alt="blogr logo">
+        <!-- main navbar for desktop , this will be hidden for mobile -->
+        <nav class="hidden lg:flex justify-between items-center text-gray-200 ml-10 w-full">
+          <div class="flex justify-center items-center relative">
+            <div  x-data="{ open: false, toggle() { this.open = ! this.open } }" class="relative">
+              <a href="#" class="flex justify-center items-center hover:text-white hover:underline" @click="toggle()">
+                <span class="mr-1"> Product </span> 
+                <img src="/images/icon-arrow-light.svg" alt="down arrow" :class="open? 'rotate-180' : ''">
+              </a>
+              <div class="inner-nav" x-show="open" @click.outside="open=false">
+                <a href="#" class="hover:underline">Overview</a>
+                <a href="#" class="hover:underline">Pricing</a>
+                <a href="#" class="hover:underline">Marketplace</a>
+                <a href="#" class="hover:underline">Features</a>
+                <a href="#" class="hover:underline">Integrations</a>
               </div>
             </div>
-            <div class="flex justify-center items-center">
-              <button>Login</button>
-              <button>Signup</button>
-            </div>
-            Product
-  
-              Overview Pricing  Marketplace  Features  Integrations Company About Team Blog Careers   Connect Contact
-            Newsletter  LinkedIn  Login Sign Up
-  
-          </nav> --> 
-          <div class="flex flex-col justify-center items-center text-white mt-28">
-            <h1 class="text-4xl text-center">A modern 
-              <span class="block">publishing platform</span> </h1>
-            <p class="mt-5 text-lg text-center tracking-tight">Grow your audience and build your online brand</p>
-            <div class="mt-10">
-              <button class="px-4 py-3 bg-white text-lightRed font-bold rounded-large ">Start for Free</button>
-              <button class="px-4 py-3 text-white font-bold rounded-large border-2">Learn More</button>
-            </div>
-          </div>
-        </header>
-  
-      </div>
-      
-      <div class="px-6">
-        <article class="mt-24">
-          <h2 class="text-center text-3xl tracking-wide">Designed for the future</h2>
-          <div class="grid md:grid-cols-2 justify-items-center items-center mt-10">
-            <div class="grid justify-items-center object-fit order-2 ">
-              <img class="md:hidden" src="./images/illustration-editor-mobile.svg" alt="">
-              <img class="hidden md:inline-block md:-mr-80" src="./images/illustration-editor-desktop.svg" alt="">
-            </div>
-            <div class="mt-10 md:mt-0 text-center md:text-left">
-              <h3 class="text-3xl tracking-wide px-6 md:px-0">Introducing an extensible editor</h3>
-              <p class="text-lg mt-5 leading-8 tracking-wide text-gray-700 px-2 md:px-0 md:text-base">Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content. 
-              The editor supports management of multiple blogs and allows easy manipulation of embeds such as images, 
-              videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or 
-              change the looks of a blog.
-              </p>
-              <h3 class="text-3xl tracking-wide mt-10 px-6 md:px-0">Robust content management</h3>
-              <p class="text-lg mt-5 leading-8 tracking-wide text-gray-700 px-2 md:px-0 md:text-base">Flexible content management enables users to easily move through posts. Increase the usability of your blog 
-              by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.
-              </p>
-            </div>
-          </div> 
-        </article>
-      </div>
-
-      <div class="px-6 ">
-        <article class="mt-24">
-          <div class="text-center" >
-            <div class="">
-              <img class="" src="./images/illustration-phones.svg" alt="">
-            </div>
-            <div class="bg-vDarkDesaturatedBlueGrad text-white -mt-60 rounded-tr-large rounded-bl-large pb-32" >
-              <div class="pt-60 bg-cover bg-top" style="background-image: url('./images/bg-pattern-circles.svg');">
-                
-                <h3 class=" text-2xl">State of the Art Infrastructure</h3>
-                <p class="mt-5 text-lg">With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity. 
-                This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.
-                </p>
+          
+            <div  x-data="{ open: false, toggle() { this.open = ! this.open } }" class="relative ml-5">
+              <a href="#" class="flex justify-center items-center hover:text-white hover:underline" @click="toggle()">
+                <span class="mr-1"> Company </span> 
+                <img src="/images/icon-arrow-light.svg" alt="down arrow" :class="open? 'rotate-180' : ''">
+              </a>
+              <div class="inner-nav" x-show="open" @click.outside="open=false">
+                <a href="#" class="hover:underline">About</a>
+                <a href="#" class="hover:underline">Team</a>
+                <a href="#" class="hover:underline">Blog</a>
+                <a href="#" class="hover:underline">Careers</a> 
               </div>
-              
             </div>
             
+            <div  x-data="{ open: false, toggle() { this.open = ! this.open } }" class="relative ml-5">
+              <a href="#" class="flex justify-center items-center hover:text-white hover:underline" @click="toggle()">
+                <span class="mr-1"> Connect </span> 
+                <img src="/images/icon-arrow-light.svg" alt="down arrow" :class="open? 'rotate-180' : ''">
+              </a>
+              <div class="inner-nav" x-show="open" @click.outside="open=false">
+                <a href="#" class="hover:underline">Contact</a>
+                <a href="#" class="hover:underline">Newsletter</a>
+                <a href="#" class="hover:underline">LinkedIn</a>
+              </div>
+            </div>
           </div>
-          
-        </article>
+           
+          <!-- login signup button for desktop , this will be hidden for mobile  -->
+          <div class="hidden lg:flex justify-center items-center">
+            <button class="px-4 py-3 rounded-full text-gray-200 btn-mb">Login</button>
+            <button class="px-4 py-3 rounded-full text-gray-200 btn-mb">Signup</button>
+          </div>     
+        </nav>
       </div>
+      <!-- mobile navbar  -->
+      <div class="flex justify-between items-center w-full lg:hidden"  x-data="{ open: false, toggle() { this.open = ! this.open } }"> 
+        <img src="/images/logo.svg" alt="blogr logo">
+        
+        <div >
+          <!-- mobile menu button, this will be hidden for desktop  -->
+          <button role="menu" class="p-2 lg:hidden" @click="toggle()" x-show="!open">
+            <img src="/images/icon-hamburger.svg" alt="menu">
+          </button>
+          <button role="menu" class="p-2 lg:hidden" @click="toggle()" x-show="open">
+            <img src="/images/icon-close.svg" alt="menu">
+          </button>
+        </div>
+        <!-- mobile menu dropdown , this will be hidden for desktop -->
+        <div class="absolute inset-x-0 top-20 lg:hidden shadow-2xl rounded-lg z-10" x-show="open" @click.outside="open=false">
+          <nav class="flex flex-col justify-center items-center text-vDarkBlackBlue bg-white rounded-lg px-5 font-medium text-lg divide-y w-full">
+            <div class="w-full py-5">
+              <div  x-data="{ open: false, toggle() { this.open = ! this.open } }">
+                <a href="#" class="flex justify-center items-center  hover:text-vDarkGrayishBlue hover:underline mt-5" @click="toggle()">
+                  <span class="mr-1"> Product </span> 
+                  <img src="/images/icon-arrow-dark.svg" alt="down arrow" :class="open? 'rotate-180' : ''">
+                </a>
+                <div class="grid justify-items-center bg-gray-200 text-vDarkGrayishBlue py-5 gap-4 mt-5 rounded-lg" x-show="open" @click.outside="open=false">
+                  <a href="#" class="hover:underline">Overview</a>
+                  <a href="#" class="hover:underline">Pricing</a>
+                  <a href="#" class="hover:underline">Marketplace</a>
+                  <a href="#" class="hover:underline">Features</a>
+                  <a href="#" class="hover:underline">Integrations</a>
+                </div>
+              </div>
+              
+              <div  x-data="{ open: false, toggle() { this.open = ! this.open } }">
+                <a href="#" class="flex justify-center items-center hover:text-vDarkGrayishBlue hover:underline mt-5" @click="toggle()">
+                  <span class="mr-1"> Company </span> 
+                  <img src="/images/icon-arrow-dark.svg" alt="down arrow" :class="open? 'rotate-180' : ''">
+                </a>
+                <div class="grid justify-items-center bg-gray-200 text-vDarkGrayishBlue py-5 gap-4 mt-5 rounded-lg" x-show="open" @click.outside="open=false">
+                  <a href="#" class="hover:underline">About</a>
+                  <a href="#" class="hover:underline">Team</a>
+                  <a href="#" class="hover:underline">Blog</a>
+                  <a href="#" class="hover:underline">Careers</a> 
+                </div>
+              </div>
+              
+              <div  x-data="{ open: false, toggle() { this.open = ! this.open } }">
+                <a href="#" class="flex justify-center items-center hover:text-vDarkGrayishBlue hover:underline mt-5" @click="toggle()"><span class="mr-1"> Connect </span> <img src="/images/icon-arrow-dark.svg" alt="down arrow" :class="open? 'rotate-180' : ''">
+                </a>
+                <div class="grid justify-items-center bg-gray-200 text-vDarkGrayishBlue py-5 gap-4 mt-5 rounded-lg" x-show="open" @click.outside="open=false">
+                  <a href="#" class="hover:underline">Contact</a>
+                  <a href="#" class="hover:underline">Newsletter</a>
+                  <a href="#" class="hover:underline">LinkedIn</a>  
+                </div>
+              </div>   
+            </div>
+               
+            <form action="" class="flex flex-col justify-center items-center w-full py-5 text-vDarkBlackBlue">
+              <button class="px-6 py-3 rounded-full btn-mb">Login</button>
+              <button class="px-6 py-3 rounded-full btn-mb">Signup</button>
+            </form> 
+          </nav>
+        </div>
+        
+      </div>  
+    </div>
+    
+    <div class="text-white mt-20 tracking-wider flex flex-col justify-center items-center">
+      <h1 class="text-3xl font-medium text-center lg:text-5xl lg:font-medium">A modern <br class="lg:hidden"> publishing platform</h1>
+      <p class="mt-5 text-lg text-center font-light">Grow your audience and build your online brand</p>
+      <form action="#" class="flex justify-center items-center mt-10">
+        <button class="start-btn px-4 py-3 bg-white font-bold rounded-large ">Start for Free</button>
+        <button class="px-4 py-3 text-white font-bold rounded-large border-2 ml-4">Learn More</button>
+      </form>
+    </div>
+  </header>
+  
+  <main class="">
+    <!-- section one  -->
+    <section class="mt-12 pt-20 pb-28 px-5 w-full max-w-7xl mx-auto relative overflow-hidden">
+      <h2 class="text-center text-2xl lg:text-4xl tracking-wide font-medium ">Designed for the future</h2>
+      <div class="mt-10 flex justify-center items-center">
+        <img class="lg:hidden" src="/images/illustration-editor-mobile.svg" alt="editor illustration">
+        <img class="hidden lg:inline-block lg:-mr-80 lg:absolute lg:right-0 lg:inset-y-0 -translate-y-12 scale-75" src="/images/illustration-editor-desktop.svg" alt="editor illustration">    
+      </div>
+      
+      <div class="grid lg:grid-cols-2 justify-items-center items-center mt-10 relative">
+        <div class="grid  lg:order-2 ">
+          
+        </div>
+        <div class="mt-10 text-center lg:text-left pr-5 lg:pl-20 text-vDarkGrayishBlue">
+          <h3 class="text-3xl tracking-wide px-6 lg:px-0">Introducing an extensible editor</h3>
+          <p class="text-lg mt-5 leading-8 tracking-wide text-color lg:px-0 lg:text-base">Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content. 
+          The editor supports management of multiple blogs and allows easy manipulation of embeds such as images, 
+          videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or 
+          change the looks of a blog.
+          </p>
+          <h3 class="mt-10 text-3xl tracking-wide px-6 lg:px-0 text-vDarkBlackBlue">Robust content management</h3>
+          <p class="text-lg mt-5 leading-8 tracking-wide text-color lg:px-0 lg:text-base">Flexible content management enables users to easily move through posts. Increase the usability of your blog 
+          by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.
+          </p>
+        </div>
+      </div> 
+    </section>
 
-      <div class="px-6">
-        <article class="mt-24 text-center"> 
-          <div>
-            <img src="./images/illustration-laptop-mobile.svg" alt="">
-          </div>
-          <h3 class=" px-6 text-3xl tracking-wide mt-10">Free, open, simple</h3>
-          <p class="text-lg mt-5 leading-8 tracking-wide text-gray-700 px-2">Blogr is a free and open source application backed by a large community of helpful developers. It supports 
+    <!-- section two  -->
+    <section class="mt-36 pb-28 w-full max-w-7xl mx-auto">
+      <div class="relative">
+        <img src="/images/illustration-phones.svg" alt="phones" class="absolute z-10 -top-48 lg:-top-24 lg:left-20">
+
+        <div class="mobile-section bg-slate-800 text-center pt-52 md:pt-96 lg:pt-28 pb-28 rounded-bl-large rounded-tr-large overflow-hidden grid lg:grid-cols-2">
+          <div></div>
+          <div class="relative z-3 px-5 lg:text-left">
+            <h3 class="text-4xl text-white font-medium">State of the Art Infrastructure</h3>
+            <p class="mt-5 text-lg text-gray-200">With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity. 
+            This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.
+            </p>
+          </div>        
+        </div>
+        
+      </div> 
+    </section>
+
+    <!-- section three  -->
+    <section class="mt-10 pb-56 px-5 w-full max-w-7xl mx-auto relative overflow-hidden">
+      <h2 class="sr-only">Section three</h2>
+      <div class="flex justify-center items-center">
+        <img class="lg:hidden" src="/images/illustration-laptop-mobile.svg" alt="laptop illustration">
+        <img class="hidden lg:inline-block lg:-ml-80 lg:absolute lg:left-0 lg:inset-y-0 -translate-y-24 scale-75" src="/images/illustration-laptop-desktop.svg" alt="laptop illustration">    
+      </div>
+      
+      <div class="grid lg:grid-cols-2 justify-items-center items-center relative">
+        <div class="grid">
+          <!-- empty div  -->
+        </div>
+        <div class="mt-10 text-center lg:text-left pr-5 lg:pl-20">
+          <h3 class="text-3xl tracking-wide px-6 lg:px-0">Free, open, simple</h3>
+          <p class="text-lg mt-5 leading-8 tracking-wide text-color lg:px-0 lg:text-base">Blogr is a free and open source application backed by a large community of helpful developers. It supports 
             features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools, 
             and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.
           </p>
-          <h3 class=" px-6 text-3xl tracking-wide mt-10">Powerful tooling</h3>
-          <p class="text-lg mt-5 leading-8 tracking-wide text-gray-700 px-2">Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a breeze, but
-            capable of producing even the most complicated sites.</p>
-        </article>
-      </div>
-
-      <footer class="bg-black text-grayishBlue rounded-tr-large mt-20">
-        <div class="py-10 flex flex-col justify-center items-center">
-          <img src="./images/logo.svg" alt="">
-          <div class="">
-            <div class="mt-10 flex flex-col justify-center items-center">
-              <h3 class="font-bold text-lg text-white"><a href="#">Product</a></h3>
-              <a href="#">Overview</a>
-              <a href="#">Pricing</a>
-              <a href="#">Marketplace</a>
-              <a href="#">Features</a>
-              <a href="#">Integrations</a>
-              
-            </div>
-
-            <div class="mt-10 flex flex-col justify-center items-center">
-              <h3 class="font-bold text-lg text-white"><a href="#">Company</a></h3>
-              <a href="#">About</a>
-              <a href="#">Team</a>
-              <a href="#">Blog</a>
-              <a href="#">Careers</a>              
-            </div>
-
-            <div class="mt-10 flex flex-col justify-center items-center">
-              <h3 class="font-bold text-lg text-white"><a href="#">Connect</a></h3>
-              <a href="#">Contact</a>
-              <a href="#">Newsletter</a>
-              <a href="#">LinkedIn</a>              
-            </div>
-            
-          </div>          
-        </div>  
-      </footer>
+          <h3 class="mt-10 text-3xl tracking-wide px-6 lg:px-0 text-vDarkBlackBlue">Powerful tooling</h3>
+          <p class="text-lg mt-5 leading-8 tracking-wide text-color lg:px-0 lg:text-base">Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a breeze, but
+            capable of producing even the most complicated sites.
+          </p>
+        </div>
+        
+      </div> 
     </section>
   </main>
+  <footer class="rounded-tr-large mt-20 max-w-7xl mx-auto">
+    <div class="py-10 flex flex-col justify-center items-center lg:grid lg:grid-cols-4 lg:justify-items-start lg:px-10 lg:items-start max-w-5xl mx-auto">
+      <img src="./images/logo.svg" alt="Blogr">
+    
+      <div class="mt-10 flex flex-col justify-center items-center lg:mt-0 lg:items-start">
+        <h3 class="font-bold text-lg text-gray-200"><a href="#">Product</a></h3>
+        <div class="flex flex-col justify-center items-center mt-5 lg:items-start">
+          <a href="#">Overview</a>
+          <a href="#">Pricing</a>
+          <a href="#">Marketplace</a>
+          <a href="#">Features</a>
+          <a href="#">Integrations</a>
+        </div>         
+      </div>
 
+      <div class="mt-10 flex flex-col justify-center items-center lg:mt-0 lg:items-start">
+        <h3 class="font-bold text-lg text-gray-200"><a href="#">Company</a></h3>
+        <div class="flex flex-col justify-center items-center mt-5 lg:items-start">
+          <a href="#">About</a>
+          <a href="#">Team</a>
+          <a href="#">Blog</a>
+          <a href="#">Careers</a>
+        </div>              
+      </div>
+
+      <div class="mt-10 flex flex-col justify-center items-center lg:mt-0 lg:items-start">
+        <h3 class="font-bold text-lg text-gray-200"><a href="#">Connect</a></h3>
+        <div class="flex flex-col justify-center items-center mt-5 lg:items-start">
+          <a href="#">Contact</a>
+          <a href="#">Newsletter</a>
+          <a href="#">LinkedIn</a>
+        </div>              
+      </div>   
+    </div>  
+  </footer>
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
 </body>
